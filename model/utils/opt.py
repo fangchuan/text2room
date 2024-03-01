@@ -8,7 +8,7 @@ def get_default_parser():
     group = parser.add_argument_group("general")
     group.add_argument('--device', required=False, default="cuda")
     group.add_argument('--exp_name', type=str, default='full_trajectory')
-    group.add_argument('--trajectory_file', type=str, default='model/trajectories/examples/living_room.json')
+    group.add_argument('--trajectory_file', type=str, default='model/trajectories/examples/bedroom_scene_03084_641793.json')
     group.add_argument('--models_path', required=False, default="checkpoints")
     group.add_argument('--out_path', required=False, default="output")
     group.add_argument('--input_image_path', required=False, type=str, default=None)

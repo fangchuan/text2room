@@ -7,7 +7,11 @@ class Encoder(nn.Module):
     def __init__(self):
         super(Encoder, self).__init__()
         basemodel_name = 'tf_efficientnet_b5_ap'
-        basemodel = torch.hub.load('rwightman/gen-efficientnet-pytorch', basemodel_name, pretrained=True)
+        basemodel = torch.hub.load('rwightman/gen-efficientnet-pytorch', basemodel_name, pretrained=True, trust_repo='check')
+        # repo_dir = '/root/.cache/torch/hub/rwightman_gen-efficientnet-pytorch_master/'
+        # repo_dir = 'rwightman_gen-efficientnet-pytorch_master'
+        # basemodel = torch.hub.load(repo_dir, basemodel_name, source='local', pretrained=True, trust_repo='check')
+
         # Remove last layer
         basemodel.global_pool = nn.Identity()
         basemodel.classifier = nn.Identity()
